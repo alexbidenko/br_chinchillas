@@ -1,0 +1,110 @@
+<header>
+  <div style="height: 50px;"></div>
+  <app-navigation></app-navigation>
+</header>
+
+<main class="container-fluid">
+  <h2 class="h2 text-center my-2 title">Свяжитесь с нами</h2>
+  <h3 class="h3 text-center my-2 title">Узнайте больше или договоритесь о покупке</h3>
+  <hr />
+
+  <div class="row">
+    <div class="col-12 col-md-6 pb-4 order-md-2">
+      <h3 class="my-3">Мы в социальных сетях</h3>
+      <hr class="trapezoid" />
+
+      <a href="https://www.facebook.com/BRChinchillas" class="row my-2" target="_blank">
+        <div class="col-auto">
+          <img src="../assets/icon_facebook.png" style="width: 40px;">
+        </div>
+        <div class="col social-link">
+          Facebook
+        </div>
+      </a>
+
+      <a href="https://vk.com/id349474975" class="row my-2" target="_blank">
+        <div class="col-auto">
+          <img src="../assets/icon_vk.webp" style="width: 40px;">
+        </div>
+        <div class="col social-link">
+          ВКонтакте
+        </div>
+      </a>
+
+      <a href="https://ok.ru/profile/571647904409" class="row my-2" target="_blank">
+        <div class="col-auto">
+          <img src="../assets/icon_ok.png" style="width: 40px;">
+        </div>
+        <div class="col social-link">
+          Одноклассники
+        </div>
+      </a>
+    </div>
+    <div class="col-12 col-md-6 pb-4 order-md-1">
+      <h3 class="my-3">Форма обратной связи</h3>
+      <hr class="trapezoid" />
+      <div class="form-group">
+        <label for="userName">
+          Ваше имя
+          <div [ngStyle]="{visibility: userName.isValid == null ? 'hidden' : 'visible'}"
+               [ngClass]="userName.isValid ? 'valid-feedback' : 'invalid-feedback'">
+            {{userName.isValid ? '' : 'Имя не может быть пустым'}}
+          </div>
+        </label>
+        <input type="text" class="form-control" id="userName" placeholder="Имя"
+               [(ngModel)]="userName.value" (input)="userName.checker()"
+               [ngClass]="userName.isValid == null ? '' : userName.isValid ? 'is-valid' : 'is-invalid'">
+      </div>
+      <div class="form-group">
+        <label for="userEmail" class="w-100">
+          Ваш Email
+          <div [ngStyle]="{visibility: userEmail.isValid == null ? 'hidden' : 'visible'}"
+               [ngClass]="userEmail.isValid ? 'valid-feedback' : 'invalid-feedback'">
+            {{userEmail.isValid ? '' : 'Некорректный формат Email'}}
+          </div>
+        </label>
+        <input type="text" class="form-control" id="userEmail" placeholder="Email"
+               [(ngModel)]="userEmail.value" (input)="userEmail.checker()"
+               [ngClass]="userEmail.isValid == null ? '' : userEmail.isValid ? 'is-valid' : 'is-invalid'">
+      </div>
+      <div class="form-group">
+        <label for="userPhone" class="w-100">
+          Ваш телефон
+          <div [ngStyle]="{visibility: userPhone.isValid == null ? 'hidden' : 'visible'}"
+               [ngClass]="userPhone.isValid ? 'valid-feedback' : 'invalid-feedback'">
+            {{userPhone.isValid ? '' : 'Некорректный телефон'}}
+          </div>
+        </label>
+        <input type="text" class="form-control" id="userPhone" placeholder="Телефон"
+               [(ngModel)]="userPhone.value" (input)="userPhone.checker()"
+               [ngClass]="userPhone.isValid == null ? '' : userPhone.isValid ? 'is-valid' : 'is-invalid'">
+      </div>
+      <div class="form-group">
+        <label for="userCity" class="w-100">
+          Ваш город
+          <div [ngStyle]="{visibility: userCity.isValid == null ? 'hidden' : 'visible'}"
+               [ngClass]="userCity.isValid ? 'valid-feedback' : 'invalid-feedback'">
+            {{userCity.isValid ? '' : 'Город не может быть пустым'}}
+          </div>
+        </label>
+        <input type="text" class="form-control" id="userCity" placeholder="Город"
+               [(ngModel)]="userCity.value" (input)="userCity.checker()"
+               [ngClass]="userCity.isValid == null ? '' : userCity.isValid ? 'is-valid' : 'is-invalid'">
+      </div>
+      <div class="form-group">
+        <label for="userMessage" class="w-100">
+          Ваше сообщение
+          <div [ngStyle]="{visibility: userMessage.isValid == null ? 'hidden' : 'visible'}"
+               [ngClass]="userMessage.isValid ? 'valid-feedback' : 'invalid-feedback'">
+            {{userMessage.isValid ? '' : 'Сообщение не может быть пустым'}}
+          </div>
+        </label>
+        <textarea type="text" class="form-control" id="userMessage" rows="3"
+                  [(ngModel)]="userMessage.value" (input)="userMessage.checker()"
+                  [ngClass]="userMessage.isValid == null ? '' : userMessage.isValid ? 'is-valid' : 'is-invalid'"></textarea>
+      </div>
+
+      <button class="btn btn-success" (click)="sendBackMessage()" [disabled]="isWaitSending">Отправить</button>
+    </div>
+  </div>
+</main>

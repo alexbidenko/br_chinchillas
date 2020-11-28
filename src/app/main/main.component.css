@@ -1,0 +1,75 @@
+.main-ad-card {
+  padding: 22px 16px;
+  text-align: center;
+  border: 1px solid gray;
+}
+.main-ad-card:first-child {
+  border-top-left-radius: 44px;
+}
+.main-ad-card:last-child {
+  border-bottom-right-radius: 24px;
+}
+.main-ad-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background: no-repeat center / cover;
+  display: inline-block;
+}
+.section-link {
+  font-size: 24px;
+  color: gray;
+}
+.section-link::before {
+  content: '\2192';
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+  right: 10px;
+
+  transition-property: opacity, right;
+  transition-duration: .2s;
+}
+.section-link::after {
+  content: '\2192';
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  left: -10px;
+
+  transition-property: opacity, left;
+  transition-duration: .2s;
+}
+.section-link:hover::before {
+  opacity: 0;
+  right: -10px;
+}
+.section-link:hover::after {
+  opacity: 1;
+  left: 10px;
+}
+
+.achievement-container {
+  padding-left: 20%;
+  padding-bottom: 8px;
+  padding-right: 24px;
+  overflow-y: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+.achievement-card {
+  height: 70vh;
+  background: no-repeat center / cover;
+  box-shadow: 1px 1px 4px 0 black;
+  border-radius: 4px;
+  margin-right: 16px;
+  white-space: pre-line;
+  position: relative;
+}
+.achievement-description {
+  position: absolute;
+  bottom: 0;
+  color: gold;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px black;
+}

@@ -1,0 +1,16 @@
+<div class="p-3">
+  <div class="card-block"
+       [style.backgroundImage]="'url(' + (!!this.product ? '../assets/products_images/' : url + '/photos/get/') + avatar + ')'">
+    <span *ngIf="!!purchase && country === 'RU'" class="block-cost">{{purchase.rubles}} ₽</span>
+    <span *ngIf="!!purchase && !!country && country !== 'RU'" class="block-cost">{{purchase.euros}} €</span>
+    <span *ngIf="!!product" class="block-cost">{{product.cost}} ₽</span>
+
+    <div *ngIf="!!chinchilla" class="block-information">
+      <h3>{{chinchilla.name}}</h3>
+      <p class="m-0">{{chinchilla.description}}</p>
+    </div>
+    <div *ngIf="!!product" class="block-information">
+      <h3>{{product.title}}</h3>
+    </div>
+  </div>
+</div>

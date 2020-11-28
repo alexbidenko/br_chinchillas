@@ -1,0 +1,21 @@
+<div class="main-header-container">
+  <div class="main-header-background">
+    <div class="title-container">
+      <h1 class="main-title">BR Chinchillas</h1>
+      <h3 class="main-slogan">On the way<br/>to perfection</h3>
+    </div>
+
+    <div class="navigation-container">
+      <a routerLink="/shop/sale" class="navigation-link"
+         [class.navigation-link-hide]="scrollYValue > windowHeight / 5 - windowHeight / 10">Купить</a>
+      <a routerLink="/products" class="navigation-link"
+         [class.navigation-link-hide]="scrollYValue > windowHeight / 5 * 2 - windowHeight / 10">Товары</a>
+      <a routerLink="/chinchillas" class="navigation-link"
+         [class.navigation-link-hide]="scrollYValue > windowHeight / 5 * 3 - windowHeight / 10">Шиншилллы</a>
+      <a routerLink="/information" class="navigation-link"
+         [class.navigation-link-hide]="scrollYValue > windowHeight / 5 * 4 - windowHeight / 10">Справочная</a>
+      <a routerLink="/contacts" class="navigation-link"
+         [class.navigation-link-hide]="scrollYValue > windowHeight - windowHeight / 10">Контакты</a>
+    </div>
+  </div>
+</div>

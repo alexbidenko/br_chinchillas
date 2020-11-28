@@ -1,0 +1,103 @@
+.main-header-container {
+  background: url("https://pp.userapi.com/c846524/v846524738/1e6669/6T9gXET5WnU.jpg") no-repeat center / cover;
+  height: 100vh;
+}
+.main-header-background {
+  background: rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 100%;
+}
+@keyframes show-title {
+  from {
+    left: -100px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes show-navigation {
+  from {
+    left: -100px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+.title-container {
+  position: absolute;
+  top: 50vh;
+  left: 0;
+
+  animation: show-title 1s;
+}
+.navigation-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 20vh;
+
+  animation: show-navigation 1s;
+}
+.navigation-link {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  padding-right: 20px;
+  color: white!important;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px black;
+  position: relative;
+  bottom: 0;
+  opacity: 1;
+  text-decoration: none;
+
+  transition-property: padding-right, font-size, opacity, bottom;
+  transition-duration: .3s;
+}
+.navigation-link:hover {
+  padding-right: 50px;
+  font-size: 34px;
+}
+.navigation-link-hide {
+  opacity: 0;
+  bottom: -60px;
+}
+.main-title {
+  font-family: serif;
+  color: #449;
+  border-bottom: 1px solid #449;
+}
+.main-slogan {
+  font-family: serif;
+  color: #338;
+}
+@media all and (orientation: portrait) {
+  .navigation-link {
+    font-size: 24px;
+  }
+  .main-title {
+    font-size: 44px;
+    padding-left: 28px;
+  }
+  .main-slogan {
+    font-size: 32px;
+    padding-left: 28px;
+  }
+}
+@media all and (orientation: landscape) {
+  .navigation-link {
+    font-size: 28px;
+  }
+  .main-title {
+    font-size: 64px;
+    padding-left: 40px;
+  }
+  .main-slogan {
+    font-size: 46px;
+    padding-left: 40px;
+  }
+}

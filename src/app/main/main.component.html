@@ -1,0 +1,60 @@
+<header>
+  <app-main-header></app-main-header>
+  <div style="height: 50px;"></div>
+  <app-navigation></app-navigation>
+</header>
+<main>
+  <section class="container-fluid py-5" style="min-height: 100vh;
+      background: linear-gradient(180deg, #dcf, transparent);">
+    <h2 class="text-center mb-5">Все для вашего питомника</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 main-ad-card">
+          <div class="main-ad-image" style="background-image: url('../assets/main_ad_image_1.png')"></div>
+          <p class="mt-5">Приобретайте шиншилл с прекрасным мехом, у нас цены всегда соответствуют качеству</p>
+          <a routerLink="/shop/sale" class="section-link">Хочу купить</a>
+        </div>
+        <div class="col-12 col-md-4 main-ad-card">
+          <div class="main-ad-image" style="background-image: url('../assets/main_ad_image_3.jpg')"></div>
+          <p class="mt-5">Покупайте все необходимое для их содержания и ваши звери будут здоровые и счастливые</p>
+          <a routerLink="/products" class="section-link">Хочу приобрести</a>
+        </div>
+        <div class="col-12 col-md-4 main-ad-card">
+          <div class="main-ad-image" style="background-image: url('../assets/main_ad_image_2.jpg')"></div>
+          <p class="mt-5">Получайте достоверныю информацию из многолетнего опыта, информацию, проверенную годами</p>
+          <a routerLink="/information" class="section-link">Хочу узнать</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="height: 100vh; overflow-x: hidden;
+      background: linear-gradient(180deg, #ccf, transparent);">
+    <h2 class="text-center py-5">Достижения питомника</h2>
+    <div class="achievement-container row">
+      <a *ngFor="let achievement of achievements" class="achievement-card col-10 col-md-7 col-lg-4"
+         [href]="'../assets/achives_images/' + achievement.image" data-fancybox="gallery-achievements"
+         [style.backgroundImage]="'url(../assets/achives_images/' + achievement.image + ')'" [attr.data-caption]="achievement.description">
+        <p class="achievement-description">{{achievement.description}}</p>
+      </a>
+    </div>
+  </section>
+
+  <app-section-about></app-section-about>
+
+  <section class="container-fluid p-4" style="min-height: 100vh; overflow-x: hidden;
+      background: linear-gradient(180deg, #ffc, transparent);">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <a href="https://nick-name.ru/nickname/id1185496/" class="w-100">
+            <img src="https://nick-name.ru/img.php?id=1185496&sert=1" class="w-100"
+                 alt="Сертификат на никнейм BR Chinchillas, зарегистрирован на Биденко Радмилу Александровну" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>

@@ -1,0 +1,77 @@
+<header>
+  <div style="height: 50px;"></div>
+  <app-navigation></app-navigation>
+</header>
+
+<main class="container-fluid" *ngIf="!!chinchilla">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <img [src]="url + '/photos/get/' + avatar" class="w-100">
+    </div>
+    <div class="col-12 col-md-8 pt-3">
+      <h2 class="chinchilla-name">{{chinchilla.name}}<span class="article">Артикл: {{id}}</span></h2>
+      <hr class="trapezoid" />
+
+      <div *ngIf="!!purchase" class="row">
+        <div class="col">
+          <div class="sale-description">
+            <h3 class="section-title">Продается</h3>
+            <p>{{purchase.description}}</p>
+          </div>
+        </div>
+        <div class="col-auto">
+          <p *ngIf="purchase.rubles > 0 && country === 'RU'" class="sale-cost">{{purchase.rubles}} ₽</p>
+          <p *ngIf="purchase.euros > 0 && !!country && country !== 'RU'" class="lead">{{purchase.euros}} €</p>
+        </div>
+
+        <div class="col-12">
+          <hr />
+        </div>
+      </div>
+
+      <div *ngIf="page != 'babies' && !!chinchilla.adultPhotos">
+        <h3>Взрослые фотографии</h3>
+
+        <div class="col-12">
+          <div class="horizontal-gallery row">
+            <a *ngFor="let photo of chinchilla.adultPhotos" [href]="url + '/photos/get/' + photo" data-fancybox="gallery-adults"
+               class="col-4 gallery-photo" [style.backgroundImage]="'url(' + url + '/photos/get/' + photo + ')'"></a>
+          </div>
+        </div>
+      </div>
+
+      <hr *ngIf="!!chinchilla.adultPhotos && !!chinchilla.babyPhotos" />
+
+      <div *ngIf="!!chinchilla.babyPhotos">
+        <h3>Детские фотографии</h3>
+
+        <div class="col-12">
+          <div class="horizontal-gallery row">
+            <a *ngFor="let photo of chinchilla.babyPhotos" [href]="url + '/photos/get/' + photo" data-fancybox="gallery-babies"
+               class="col-4 gallery-photo" [style.backgroundImage]="'url(' + url + '/photos/get/' + photo + ')'"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  <p class="lead">{{chinchilla.description}}</p>
+
+  <div class="row pb-5 px-3">
+    <div class="col-12 col-md-6 p-0 border">
+      <a *ngIf="!!mother" routerLink="../../../chinchilla/adults/{{mother.id}}"
+         class="d-block">
+        <h4 class="text-center my-2">Мама</h4>
+        <div class="parent" [style.backgroundImage]="'url(' + url + '/photos/get/' + mother.adultAvatar + ')'"></div>
+      </a>
+    </div>
+    <div class="col-12 col-md-6 p-0 border">
+      <a *ngIf="!!father" routerLink="../../../chinchilla/adults/{{father.id}}"
+         class="d-block">
+        <h4 class="text-center my-2">Папа</h4>
+        <div class="parent" [style.backgroundImage]="'url(' + url + '/photos/get/' + father.adultAvatar + ')'"></div>
+      </a>
+    </div>
+  </div>
+</main>

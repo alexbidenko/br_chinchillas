@@ -1,0 +1,21 @@
+<header>
+  <app-navigation></app-navigation>
+
+  <div class="container-fluid">
+    <div class="row head-container">
+      <div id="head-adults" class="col-auto head-image" routerLink="adults" [class.active]="isAdultsActive">
+        <div class="head-background">
+          <h2 class="head-title">Взрослые</h2>
+        </div>
+      </div>
+      <div id="head-babies" class="col-auto head-image" routerLink="babies/{{year}}" [class.active]="isBabiesActive">
+        <div class="head-background">
+          <h2 class="head-title">Дети</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

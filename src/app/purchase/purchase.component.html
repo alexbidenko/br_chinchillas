@@ -1,0 +1,26 @@
+<header>
+  <app-navigation></app-navigation>
+
+  <div style="height: 100vh; background: url('../assets/head_image_purchases.jpg') no-repeat center / cover">
+    <div class="title-container">
+      <h1>Купить шиншилл</h1>
+      <p>Шиншиллы питомника стабильно занимают на выставках победные и призовые места<br />
+        Покупая у нас, вы покупаете качество</p>
+
+      <app-confirm></app-confirm>
+    </div>
+
+    <div class="to-reserve-container">
+      <a routerLink="../sale" routerLinkActive="d-none" class="section-link">Продаются</a>
+      <a routerLink="../reserve" routerLinkActive="d-none" class="section-link">В резерве</a>
+      <a routerLink="../sold" routerLinkActive="d-none" class="section-link">Проданы</a>
+    </div>
+  </div>
+</header>
+<main class="container-fluid">
+  <div class="row">
+    <app-card *ngFor="let chinchilla of filteredChinchillas" [chinchilla]="chinchilla.chinchilla" [purchase]="chinchilla.purchase"
+              [page]="'purchases'" routerLink="../../chinchilla/purchase/{{chinchilla.chinchilla.id}}"
+              class="col-12 col-md-6 col-lg-4 p-0"></app-card>
+  </div>
+</main>

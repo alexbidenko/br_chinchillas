@@ -1,0 +1,35 @@
+.card-block {
+  height: 60vh;
+  background: no-repeat center / cover;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px 0 black;
+  cursor: pointer;
+  overflow: hidden;
+
+  transition-property: transform;
+  transition-duration: .3s;
+}
+.card-block:hover {
+  transform: scale(1.02);
+}
+.block-cost {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  color: gold;
+  text-shadow: 1px 1px 1px black;
+  font-size: 18px;
+}
+.block-information {
+  position: absolute;
+  padding: 8px;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  background-color: rgba(100, 100, 100, .4);
+}
+.block-information h3 {
+  font-weight: 200;
+}

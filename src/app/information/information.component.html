@@ -1,0 +1,22 @@
+<header>
+  <app-navigation></app-navigation>
+  <div style="height: 50px;"></div>
+</header>
+<main class="container-fluid" style="min-width: 800px;">
+  <div class="row" *ngIf="isAuthorized === true">
+    <div class="col-3 p-0 border-right">
+      <div class="list-group">
+        <a [routerLink]="['/information', 'nutrition']" class="list-group-item list-group-item-action rounded-0"
+           routerLinkActive="active">Питание</a>
+        <a [routerLink]="['/information', 'keeping']" class="list-group-item list-group-item-action" routerLinkActive="active">Содержание</a>
+        <a [routerLink]="['/information', 'illnesses']" class="list-group-item list-group-item-action" routerLinkActive="active">Болезни</a>
+        <a [routerLink]="['/information', 'colors']" class="list-group-item list-group-item-action rounded-0"
+           routerLinkActive="active">Окрасы</a>
+      </div>
+    </div>
+    <div class="col-9 content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-authorization></app-authorization>
+</main>

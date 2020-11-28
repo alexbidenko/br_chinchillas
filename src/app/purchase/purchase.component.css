@@ -1,0 +1,29 @@
+.title-container {
+  position: absolute;
+  top: 200px;
+  left: 40px;
+}
+.to-reserve-container {
+  position: absolute;
+  top: 70vh;
+  right: 40px;
+}
+.section-link {
+  display: block;
+  font-size: 22px;
+  color: white;
+}
+.section-link::after {
+  content: '\2192';
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  left: -10px;
+
+  transition-property: opacity, left;
+  transition-duration: .2s;
+}
+.section-link:hover::after {
+  opacity: 1;
+  left: 10px;
+}

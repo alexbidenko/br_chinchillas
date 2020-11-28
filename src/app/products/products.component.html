@@ -1,0 +1,33 @@
+<header>
+  <app-navigation></app-navigation>
+  <div style="height: 50px;"></div>
+
+  <div class="head">
+    <div class="title-container">
+      <h1 class="products-title">ВАМ<br /><div><span class="head-ad">ПОНАДОБИТСЯ</span></div></h1>
+      <p class="title-description">Покупайте все необходимое для достойного содержания животных разведения питомника BR Chinchillas</p>
+    </div>
+
+    <a href="tel:89184634410" class="head-phone">8-(918)-463-4410</a>
+  </div>
+</header>
+
+<main class="container-fluid">
+  <div class="row">
+    <app-card *ngFor="let product of products; let i = index" [product]="product" [page]="'products'" (click)="openProduct(i)"
+              class="col-12 col-md-6 col-lg-4 p-0"></app-card>
+  </div>
+
+  <div id="openedProductModal" class="container" style="display: none;">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <img [src]="'../assets/products_images/' + openedProduct.image" class="w-100">
+      </div>
+      <div class="col-12 col-md-6">
+        <h3>{{openedProduct.title}}<span class="opened-cost">{{openedProduct.cost}}₽</span></h3>
+        <hr />
+        <p class="lead">{{openedProduct.description}}</p>
+      </div>
+    </div>
+  </div>
+</main>

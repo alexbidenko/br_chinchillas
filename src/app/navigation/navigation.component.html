@@ -1,0 +1,37 @@
+<nav class="container-fluid background" [class.fixed]="scrollYValue > windowHeight || isNavigationShow">
+  <div class="row">
+    <div class="col-auto p-0">
+      <img src="https://pp.userapi.com/c846524/v846524738/1e6673/zjviIX0xeFM.jpg" style="width: 50px;">
+    </div>
+    <a routerLink="/home" class="d-inline-block d-md-none h4 m-0 p-2 text-white">BR Chinchillas</a>
+    <a routerLink="/home" routerLinkActive="d-md-none" class="col navigation-link navigation-link-show d-none d-md-block">Главная</a>
+    <a routerLink="/shop/sale" routerLinkActive="d-md-none" class="col navigation-link d-none d-md-block"
+       [class.navigation-link-show]="scrollYValue > windowHeight / 5 - windowHeight / 10 || isNavigationShow">Купить</a>
+    <a routerLink="/products" routerLinkActive="d-md-none" class="col navigation-link d-none d-md-block"
+       [class.navigation-link-show]="scrollYValue > windowHeight / 5 * 2 - windowHeight / 10 || isNavigationShow">Товары</a>
+    <a routerLink="/chinchillas" routerLinkActive="d-md-none" class="col navigation-link d-none d-md-block"
+       [class.navigation-link-show]="scrollYValue > windowHeight / 5 * 3 - windowHeight / 10 || isNavigationShow">Шиншилллы</a>
+    <a routerLink="/information" routerLinkActive="d-md-none" class="col navigation-link d-none d-md-block"
+       [class.navigation-link-show]="scrollYValue > windowHeight / 5 * 4 - windowHeight / 10 || isNavigationShow">Справочная</a>
+    <a routerLink="/contacts" routerLinkActive="d-md-none" class="col navigation-link d-none d-md-block"
+       [class.navigation-link-show]="scrollYValue > windowHeight - windowHeight / 10 || isNavigationShow">Контакты</a>
+
+    <a class="hamburger d-none d-md-none" [class.d-block]="scrollYValue > windowHeight || isNavigationShow"
+         data-morphing-menu data-src="#morphing-content-menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </a>
+  </div>
+
+  <div id="morphing-content-menu" class="hidden">
+    <ul class="nav-links">
+      <li (click)="closeFB()" routerLink="/home" routerLinkActive="d-none"><a (click)="closeFB()" routerLink="/home">Главная</a></li>
+      <li (click)="closeFB()" routerLink="/shop/sale" routerLinkActive="d-none"><a (click)="closeFB()" routerLink="/shop/sale">Купить</a></li>
+      <li (click)="closeFB()" routerLink="/products" routerLinkActive="d-none"><a (click)="closeFB()" routerLink="/products">Товары</a></li>
+      <li (click)="closeFB()" routerLink="/chinchillas" routerLinkActive="d-none"><a (click)="closeFB()" routerLink="/chinchillas">Шиншилллы</a></li>
+      <li (click)="closeFB()" routerLink="/information" routerLinkActive="d-none"><a (click)="closeFB()" routerLink="/information">Справочная</a></li>
+      <li (click)="closeFB()" routerLink="/contacts" routerLinkActive="d-none"><a (click)="closeFB()" routerLink="/contacts">Контакты</a></li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <div class="row position-relative">
+    <app-card *ngFor="let chinchilla of chinchillas" [chinchilla]="chinchilla" [page]="'adults'"
+              routerLink="../../chinchilla/adults/{{chinchilla.id}}" class="col-12 col-md-6 col-lg-4 p-0"></app-card>
+  </div>
+</div>

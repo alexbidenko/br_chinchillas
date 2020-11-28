@@ -1,0 +1,52 @@
+.about-image {
+  background: url('https://static.wixstatic.com/media/5ae87b_d0f3881a57854835b35a441edd466c67.jpg/v1/fill/w_417,h_232,al_c,q_80,usm_0.66_1.00_0.01/5ae87b_d0f3881a57854835b35a441edd466c67.webp') no-repeat center / cover;
+  width: 120%;
+  position: relative;
+  height: 100%;
+}
+.text-background {
+  height: 100%;
+  width: 180%;
+  position: relative;
+  left: -15%;
+  background: linear-gradient(180deg, #ccc, white);
+}
+.text-container {
+  position: relative;
+  top: -100%;
+}
+.section-button {
+  font-size: 1.125rem;
+  padding: 0.4375rem 1.125rem;
+  border-radius: 1.875rem;
+  outline: none;
+  text-decoration: none;
+  line-height: normal;
+  white-space: nowrap;
+  position: relative;
+}
+.to-purchase {
+  background: black;
+  color: white;
+  margin-right: 16px;
+
+  transition: .3s background, color;
+}
+.to-purchase:hover {
+  background: silver;
+  color: black;
+}
+.text-about {
+  white-space: pre-line;
+  text-indent: 20px;
+  margin-bottom: 50px;
+}
+@media (min-width: 992px) {
+  .section-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .text-background {
+    transform: skewX(11.5deg);
+  }
+}
