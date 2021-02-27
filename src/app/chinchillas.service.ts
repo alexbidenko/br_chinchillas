@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 })
 export class ChinchillasService {
 
-  url = 'http://52.14.34.221:7510';
+  url = 'https://br-chinchillas.ru/api';
 
   chinchillas: Observable<Array<Chinchilla>>;
   purchases: Observable<Array<Purchase>>;
